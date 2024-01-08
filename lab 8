@@ -1,0 +1,33 @@
+install selenium, eclipse, jdk
+in selenium download server and java
+Extract selenium in download and copy it
+create a folder in c drive as seleinium web driver and paste the selenium copy
+Check chrome in settings-> help->about ->version
+Chromedriver -> stable -> copy url(chrome driver) next to sutible version and windows
+paste in browser and downnload -> extract 
+create a folder in c drive as chrome web driver and paste the chromedriver copy
+Open eclipse -> create java project -> JavaSE - 1.8 
+Right click on folder -> new -. package
+Right click on folder -> Build Path -> Configure build path -> Add external JAR's -> selenium.exe in C drive file(Copied and pasted one)
+Create class(if not there) -> type code
+
+package ok;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class ok {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.drive","C:\\web driver\\chrome-win64\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https:\\www.geeksforgeeks.org//");
+		driver.manage().timeouts();
+		driver.findElement(By.xpath("//span[text()='x'][1]")).click();
+		System.out.println(driver.getTitle());
+		driver.quit();
+		
+
+	}
+
+}
